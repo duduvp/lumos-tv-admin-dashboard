@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private authService: AuthService) {
+  constructor(public authService: AuthService) {
     if (authService.isLoggedIn) {
       authService.redirectToLogin();
     }

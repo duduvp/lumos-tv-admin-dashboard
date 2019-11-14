@@ -9,14 +9,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['./videos.component.css']
 })
 export class VideosComponent implements OnInit {
-  videos: any;
-  constructor(private authService: AuthService, db: AngularFireDatabase) {
+  videos: Observable<any[]>;
+  constructor(public authService: AuthService, db: AngularFireDatabase) {
     this.videos = db.list('videos').valueChanges();
   }
 
-  ngOnInit() {
-    console.log(this.videos);
-  }
+  ngOnInit() {}
 
   getUsername() {
     return JSON.parse(localStorage.getItem('user')).email;

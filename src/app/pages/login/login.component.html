@@ -12,9 +12,9 @@
                     <input type="password" matInput placeholder="Password" #pwd required>
                 </mat-form-field>
             </p>
-            <p *ngIf="error" class="error">
-                {{ error }}
-            </p>
+            <!--<p *ngIf="error" class="error">
+                
+            </p>-->
             <div class="button">
                 <button type="button" mat-raised-button color="primary" (click)="authService.login(usr.value, pwd.value)">Login</button>
             </div>
